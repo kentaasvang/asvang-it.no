@@ -1,48 +1,34 @@
 :root {
     /* Main color palette */
     --asvang-primary: #317873;
+	--asvang-primary-rgb: 49, 120, 115;
     --asvang-dark: #0a0908;
+	--asvang-dark-rgb: 19, 9, 8;
     --asvang-light: #f2f4f3;
+	--asvang-light-rgb: 242, 244, 243;
     --asvang-red: #fe4a49;
     --asvang-purple: #4f4789;
+
+	/* Override bootstrap colors */
+	--bs-primary-rgb: var(--asvang-primary-rgb);
+  	--bs-light-rgb: var(--asvang-light-rgb);
+	--bs-dark-rgb: var(--asvang-dark-rgb);
+
 }
 
-.asvang-bg-primary {
-    background-color: var(--asvang-primary);
+
+/************************************************** Buttons */
+.btn-primary {
+	--bs-btn-bg: var(--asvang-primary);
+	--bs-btn-border-color: var(--asvang-primary);
+
+	--bs-btn-hover-bg: #265c58;
+	--bs-btn-hover-border-color: #265c58;
 }
 
-.asvang-bg-dark {
-    background-color: var(--asvang-dark);
-}
-
-.asvang-bg-light {
-    background-color: var(--asvang-light);
-}
-
-.asvang-bg-red {
-    background-color: var(--asvang-red);
-}
-
-.asvang-bg-purple {
-    background-color: var(--asvang-purple);
-}
-
-.asvang-text-primary {
-    color: var(--asvang-primary);
-}
-
-.asvang-text-dark {
-    color: var(--asvang-dark);
-}
-
-.asvang-text-light {
-    color: var(--asvang-light);
-}
-
-.asvang-text-red {
-    color: var(--asvang-red);
-}
-
-.asvang-text-purple {
-    color: var(--asvang-purple);
+.btn-outline-primary {
+	--bs-btn-color: var(--asvang-primary);
+	--bs-btn-border-color: var(--asvang-primary);
+	--bs-btn-hover-bg: var(--asvang-primary);
+ 	--bs-btn-hover-border-color: var(--asvang-primary);
 }
