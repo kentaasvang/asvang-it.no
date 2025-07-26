@@ -32,3 +32,22 @@
 	--bs-btn-hover-bg: var(--asvang-primary);
  	--bs-btn-hover-border-color: var(--asvang-primary);
 }
+
+/************************************************* Icons */
+.asvang-features-icons {
+ 	padding-top: 7rem;
+  	padding-bottom: 7rem;
+}
+
+.asvang-features-icons-item {
+	max-width: 20rem;
+}
+
+.asvang-features-icons-icon {
+ 	height: 7rem;
+}
+
+
+.asvang-features-icons-icon i {
+	font-size: 4.5rem;
+}
