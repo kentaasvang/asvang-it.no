@@ -21,8 +21,10 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: var(--asvang-dark);
-    background: linear-gradient(135deg, var(--asvang-primary) 0%, var(--asvang-purple) 100%);
+    color: var(--asvang-light);
+    background: 
+        linear-gradient(135deg, rgba(var(--asvang-primary-rgb), 0.2) 0%, rgba(var(--asvang-purple-rgb), 0.1) 100%),
+        var(--asvang-dark);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -35,9 +37,9 @@ body {
     right: 0;
     z-index: 1000;
     padding: 1rem 2rem;
-    background: rgba(var(--asvang-light-rgb), 0.95);
+    background: rgba(var(--asvang-dark-rgb), 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(var(--asvang-light-rgb), 0.2);
+    border-bottom: 1px solid rgba(var(--asvang-primary-rgb), 0.3);
 }
 
 .logo {
@@ -54,7 +56,7 @@ body {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--asvang-dark);
+    color: var(--asvang-light);
     letter-spacing: -0.025em;
 }
 
@@ -67,40 +69,61 @@ body {
     padding: 2rem;
     text-align: center;
     position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse 80% 60% at top left,
+        rgba(var(--asvang-primary-rgb), 0.15) 0%,
+        rgba(var(--asvang-primary-rgb), 0.08) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(var(--asvang-primary-rgb), 0.3), transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(var(--asvang-light-rgb), 0.1), transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(var(--asvang-purple-rgb), 0.2), transparent 50%);
+    top: 50%;
+    right: -25%;
+    transform: translateY(-50%);
+    width: 120vw;
+    height: 120vh;
+    background-image: url('../logo/logo-white.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.04;
     pointer-events: none;
+    z-index: 0;
 }
 
 .hero-content {
     max-width: 800px;
     position: relative;
-    z-index: 1;
-    background: rgba(var(--asvang-light-rgb), 0.95);
+    z-index: 2;
+    background: rgba(var(--asvang-dark-rgb), 0.8);
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.1),
-        0 10px 20px rgba(0, 0, 0, 0.05);
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 10px 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(var(--asvang-light-rgb), 0.2);
+    border: 1px solid rgba(var(--asvang-primary-rgb), 0.3);
 }
 
 .hero-title {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 700;
-    color: var(--asvang-dark);
+    color: var(--asvang-light);
     margin-bottom: 1.5rem;
     line-height: 1.2;
     letter-spacing: -0.025em;
@@ -114,8 +137,8 @@ body {
 .hero-subtitle {
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 400;
-    color: var(--asvang-dark);
-    opacity: 0.7;
+    color: var(--asvang-light);
+    opacity: 0.8;
     margin-bottom: 2.5rem;
 }
 
@@ -152,13 +175,13 @@ body {
 
 .cta-button.secondary {
     background: transparent;
-    color: var(--asvang-primary);
-    border: 2px solid var(--asvang-primary);
+    color: var(--asvang-light);
+    border: 2px solid var(--asvang-light);
 }
 
 .cta-button.secondary:hover {
-    background: var(--asvang-primary);
-    color: white;
+    background: var(--asvang-light);
+    color: var(--asvang-dark);
     transform: translateY(-2px);
 }
 
